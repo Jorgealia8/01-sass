@@ -1,0 +1,143 @@
+*,
+*::after,
+*::before,
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    min-height: 20vx;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header,
+footer {
+    background-color: rgb(183, 75, 13);
+    color: rgb(255, 255, 255);
+    display: flex;
+}
+
+header:target nav {
+    display: initial;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    font-size: 1.5rem;
+    background-color: aliceblue;
+    padding: 1rem;
+    color: black;
+}
+
+header:target::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(128, 128, 128, 0.534);
+}
+
+.main-wrapper {
+    /* flex-grow: ;
+    flex-shrink: ;
+    flex-basis: ;  */
+    flex: 2 0 auto;
+    margin: 0rem 0rem 0rem 1rem;
+}
+
+nav {
+    width: 0%;
+    transition: width all 3s linear;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+footer {
+    min-height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon__warpper-icon {
+    width: 15vh;
+    padding-right: 1rem;
+    margin-top: 4vh;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 3fr;
+    gap: 1rem;
+    row-gap: 0.5rem;
+}
+
+section h2 {
+    grid-column: 1/4;
+}
+
+section p:nth-of-type(1) {
+    grid-column: 2/3;
+}
+
+section p:nth-of-type(5) {
+    grid-row: 2;
+    grid-column: 1/2;
+}
+
+@media (min-width: 450px) {
+    .icon__wrapper {
+        display: none;
+    }
+    header {
+        justify-content: space-between;
+        align-items: center;
+    }
+    header div {
+        width: auto;
+    }
+
+    nav {
+        width: auto;
+        padding-right: 4rem;
+    }
+    nav ul {
+        display: flex;
+    }
+    nav a {
+        color: inherit;
+        padding: 1rem;
+        font-size: 1.3rem;
+    }
+}
