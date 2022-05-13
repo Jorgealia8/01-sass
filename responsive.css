@@ -95,8 +95,49 @@ footer {
     margin-top: 4vh;
 }
 
+section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 3fr;
+    gap: 1rem;
+    row-gap: 0.5rem;
+}
+
+section h2 {
+    grid-column: 1/4;
+}
+
+section p:nth-of-type(1) {
+    grid-column: 2/3;
+}
+
+section p:nth-of-type(5) {
+    grid-row: 2;
+    grid-column: 1/2;
+}
+
 @media (min-width: 450px) {
+    .icon__wrapper {
+        display: none;
+    }
+    header {
+        justify-content: space-between;
+        align-items: center;
+    }
+    header div {
+        width: auto;
+    }
+
     nav {
-        display: initial;
+        width: auto;
+        padding-right: 4rem;
+    }
+    nav ul {
+        display: flex;
+    }
+    nav a {
+        color: inherit;
+        padding: 1rem;
+        font-size: 1.3rem;
     }
 }
