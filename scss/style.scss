@@ -1,8 +1,7 @@
 @import "./variables.scss";
 
 body {
-    color: $primary-color;
-    div {
-        background-color: &$primary-color;
+    section {
+        background-color: $primary-color;
     }
 }
